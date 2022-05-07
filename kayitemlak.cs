@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-
+using System.IO;
 
 namespace emlakortomasyonu
 {
@@ -19,10 +19,12 @@ namespace emlakortomasyonu
         {
             InitializeComponent();
             Fillcombo();
+            checkBox2.Checked = true;
         }
         MySqlConnection connection = Form1.baglanti;
         private void kayitemlak_Load(object sender, EventArgs e)
         {
+            
         }
         void Fillcombo()
         {
@@ -219,8 +221,7 @@ namespace emlakortomasyonu
             {
                 
                 string sehirno = reader["sehirno"].ToString();
-                plaka = int.Parse(sehirno);
-                MessageBox.Show("Tebrikler hesabınız oluşturuldu! Müşteri numaranız : " + plaka.ToString(), "DÖVİZ AL-SAT");
+                plaka = int.Parse(sehirno); 
             }
             connection.Close();
             connection.Open();
@@ -234,6 +235,71 @@ namespace emlakortomasyonu
 
 
             connection.Close();
+        }
+        public string durum;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked==true)
+            {
+                durum = "Kiralık";
+                checkBox2.Checked = false;
+            }
+            if (checkBox1.Checked == false)
+            {
+                checkBox2.Checked = true;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                durum = "Satılık";
+                checkBox1.Checked = false;
+            }
+            if (checkBox2.Checked == false)
+            {
+                checkBox1.Checked = true;
+            }
+        }
+
+        private void loginbutton_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            MySqlCommand command = new MySqlCommand("Insert into ilandakievler (ilcead,adres,durum,fiyat,acıklama,kat,metrekare,odasayi,evturu,uyeno,resimbir,resimiki,resimuc) values ('" + comboBox3.Text + "','" + bunifuMaterialTextbox4.Text + "','" + durum + "','" + bunifuMaterialTextbox5.Text + "','" + bunifuMaterialTextbox6.Text + "','" + bunifuMaterialTextbox1.Text + "','" + bunifuMaterialTextbox2.Text + "','" + bunifuMaterialTextbox3.Text + "','" + comboBox1.Text + "','" + Form1.musterino + "','" + Path.GetFileName(pictureBox1.ImageLocation)+ "','" + Path.GetFileName(pictureBox2.ImageLocation) + "','" + Path.GetFileName(pictureBox3.ImageLocation) + "')", connection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Ev Kaydedildi");
+            connection.Close();
+            File.Copy(rsm1.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox1.ImageLocation));
+            File.Copy(rsm2.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox2.ImageLocation));
+            File.Copy(rsm3.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox3.ImageLocation));
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+
+            openFileDialog1.ShowDialog();
+            pictureBox1.ImageLocation = openFileDialog1.FileName;
+            rsm1.Text = openFileDialog1.FileName;
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            pictureBox2.ImageLocation = openFileDialog1.FileName;
+            rsm2.Text = openFileDialog1.FileName;
+        }
+
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            pictureBox3.ImageLocation = openFileDialog1.FileName;
+            rsm3.Text = openFileDialog1.FileName;
         }
     }
 }

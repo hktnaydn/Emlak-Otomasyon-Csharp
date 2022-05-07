@@ -12,7 +12,8 @@ using MySql.Data.MySqlClient;
 
 namespace emlakortomasyonu
 {
-    
+   
+
     public partial class Form1 : Form
     {
         public static string musterino = null;
