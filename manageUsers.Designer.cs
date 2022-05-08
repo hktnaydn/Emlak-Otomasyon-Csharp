@@ -143,11 +143,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 20F);
             this.label4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label4.Location = new System.Drawing.Point(309, 507);
+            this.label4.Location = new System.Drawing.Point(411, 507);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(381, 40);
+            this.label4.Size = new System.Drawing.Size(150, 40);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Satılan & Kiralanan Evler";
+            this.label4.Text = "İlanlarım";
             // 
             // manageUsers
             // 

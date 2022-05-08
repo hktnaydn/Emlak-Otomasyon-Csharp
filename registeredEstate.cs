@@ -87,8 +87,7 @@ namespace emlakortomasyonu
         public void T1_Click(object sender, EventArgs e)
         {
             int index = UC_ilanlar.S_ilan_No;
-            string ilanisim = manageUsers.uyeisim;
-            string ilantelno = manageUsers.uyetelno;
+           
             ımageSlider1.Images.Clear();
             string constring = "datasource=localhost;port=3306;username=root;password=safranbolu78";
             string Query = "select * from emlakdatabase.ilandakievler where evno='" + index + "'"; 
@@ -111,6 +110,8 @@ namespace emlakortomasyonu
                     String smetrekare = MyReader.GetString("metrekare");
                     String sodasayi = MyReader.GetString("odasayi");
                     String saciklama = MyReader.GetString("acıklama");
+                    String ilanisim = MyReader.GetString("ilansahibi");
+                    String ilantelno = MyReader.GetString("ilantelno");
                     String adres = MyReader.GetString("adres");
                     lbl_kat.Text = skat;
                     ımageSlider1.Images.Add(Image.FromFile(Application.StartupPath + @"\Image\" + Path.GetFileName(MyReader["resimbir"].ToString())));

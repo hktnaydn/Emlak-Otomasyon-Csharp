@@ -265,12 +265,14 @@ namespace emlakortomasyonu
 
         private void loginbutton_Click(object sender, EventArgs e)
         {
+            string ilanisim = manageUsers.uyeisim;
+            string ilantelno = manageUsers.uyetelno;
 
             connection.Open();
             try
             {
 
-                MySqlCommand command = new MySqlCommand("Insert into ilandakievler (ilcead,adres,durum,fiyat,acıklama,kat,metrekare,odasayi,evturu,uyeno,resimbir,resimiki,resimuc,title,status) values ('" + comboBox3.Text + "','" + bunifuMaterialTextbox4.Text + "','" + durum + "','" + bunifuMaterialTextbox5.Text + "','" + bunifuMaterialTextbox6.Text + "','" + bunifuMaterialTextbox1.Text + "','" + bunifuMaterialTextbox2.Text + "','" + bunifuMaterialTextbox3.Text + "','" + comboBox1.Text + "','" + Form1.musterino + "','" + Path.GetFileName(pictureBox1.ImageLocation) + "','" + Path.GetFileName(pictureBox2.ImageLocation) + "','" + Path.GetFileName(pictureBox3.ImageLocation) + "','" + bunifuMaterialTextbox7.Text + "','" + 0 + "'   )", connection);
+                MySqlCommand command = new MySqlCommand("Insert into ilandakievler (ilcead,adres,durum,fiyat,acıklama,kat,metrekare,odasayi,evturu,uyeno,resimbir,resimiki,resimuc,title,status,ilansahibi,ilantelno) values ('" + comboBox3.Text + "','" + bunifuMaterialTextbox4.Text + "','" + durum + "','" + bunifuMaterialTextbox5.Text + "','" + bunifuMaterialTextbox6.Text + "','" + bunifuMaterialTextbox1.Text + "','" + bunifuMaterialTextbox2.Text + "','" + bunifuMaterialTextbox3.Text + "','" + comboBox1.Text + "','" + Form1.musterino + "','" + Path.GetFileName(pictureBox1.ImageLocation) + "','" + Path.GetFileName(pictureBox2.ImageLocation) + "','" + Path.GetFileName(pictureBox3.ImageLocation) + "','" + bunifuMaterialTextbox7.Text + "','" + 0 + "','" + ilanisim + "','" + ilantelno + "')", connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Ev Kaydedildi");
 
