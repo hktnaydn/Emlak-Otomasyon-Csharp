@@ -107,7 +107,7 @@ namespace emlakortomasyonu
             if (bunifuMaterialTextbox1.Text == "Kat Numarası")
             {
                 bunifuMaterialTextbox1.Text = "";
-                bunifuMaterialTextbox1.ForeColor = Color.White;
+                bunifuMaterialTextbox1.ForeColor = Color.Red;
             }
         }
 
@@ -125,7 +125,7 @@ namespace emlakortomasyonu
             if (bunifuMaterialTextbox2.Text == "Ev Toplam Alan")
             {
                 bunifuMaterialTextbox2.Text = "";
-                bunifuMaterialTextbox2.ForeColor = Color.White;
+                bunifuMaterialTextbox2.ForeColor = Color.Red;
             }
         }
 
@@ -143,7 +143,7 @@ namespace emlakortomasyonu
             if (bunifuMaterialTextbox3.Text == "Ev Oda Sayısı")
             {
                 bunifuMaterialTextbox3.Text = "";
-                bunifuMaterialTextbox3.ForeColor = Color.White;
+                bunifuMaterialTextbox3.ForeColor = Color.Red;
             }
         }
 
@@ -265,14 +265,25 @@ namespace emlakortomasyonu
 
         private void loginbutton_Click(object sender, EventArgs e)
         {
+
             connection.Open();
-            MySqlCommand command = new MySqlCommand("Insert into ilandakievler (ilcead,adres,durum,fiyat,acıklama,kat,metrekare,odasayi,evturu,uyeno,resimbir,resimiki,resimuc) values ('" + comboBox3.Text + "','" + bunifuMaterialTextbox4.Text + "','" + durum + "','" + bunifuMaterialTextbox5.Text + "','" + bunifuMaterialTextbox6.Text + "','" + bunifuMaterialTextbox1.Text + "','" + bunifuMaterialTextbox2.Text + "','" + bunifuMaterialTextbox3.Text + "','" + comboBox1.Text + "','" + Form1.musterino + "','" + Path.GetFileName(pictureBox1.ImageLocation)+ "','" + Path.GetFileName(pictureBox2.ImageLocation) + "','" + Path.GetFileName(pictureBox3.ImageLocation) + "')", connection);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Ev Kaydedildi");
+            try
+            {
+
+                MySqlCommand command = new MySqlCommand("Insert into ilandakievler (ilcead,adres,durum,fiyat,acıklama,kat,metrekare,odasayi,evturu,uyeno,resimbir,resimiki,resimuc,title,status) values ('" + comboBox3.Text + "','" + bunifuMaterialTextbox4.Text + "','" + durum + "','" + bunifuMaterialTextbox5.Text + "','" + bunifuMaterialTextbox6.Text + "','" + bunifuMaterialTextbox1.Text + "','" + bunifuMaterialTextbox2.Text + "','" + bunifuMaterialTextbox3.Text + "','" + comboBox1.Text + "','" + Form1.musterino + "','" + Path.GetFileName(pictureBox1.ImageLocation) + "','" + Path.GetFileName(pictureBox2.ImageLocation) + "','" + Path.GetFileName(pictureBox3.ImageLocation) + "','" + bunifuMaterialTextbox7.Text + "','" + 0 + "'   )", connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Ev Kaydedildi");
+
+                File.Copy(rsm1.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox1.ImageLocation));
+                File.Copy(rsm2.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox2.ImageLocation));
+                File.Copy(rsm3.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox3.ImageLocation));
+            }
+            catch (Exception excity)
+            {
+                connection.Close();
+                MessageBox.Show(excity.Message);
+            }
             connection.Close();
-            File.Copy(rsm1.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox1.ImageLocation));
-            File.Copy(rsm2.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox2.ImageLocation));
-            File.Copy(rsm3.Text, Application.StartupPath + @"\Image\" + Path.GetFileName(pictureBox3.ImageLocation));
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -300,6 +311,16 @@ namespace emlakortomasyonu
             openFileDialog1.ShowDialog();
             pictureBox3.ImageLocation = openFileDialog1.FileName;
             rsm3.Text = openFileDialog1.FileName;
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kayitemlak_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

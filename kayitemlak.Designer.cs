@@ -46,6 +46,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.bunifuMaterialTextbox7 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox6 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -86,7 +87,7 @@
             // 
             this.bunifuMaterialTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuMaterialTextbox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.Crimson;
+            this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.Red;
             this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.Empty;
             this.bunifuMaterialTextbox3.HintText = "";
             this.bunifuMaterialTextbox3.isPassword = false;
@@ -108,7 +109,7 @@
             // 
             this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.Crimson;
+            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.Red;
             this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
             this.bunifuMaterialTextbox2.HintText = "";
             this.bunifuMaterialTextbox2.isPassword = false;
@@ -130,7 +131,7 @@
             // 
             this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Crimson;
+            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Red;
             this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
             this.bunifuMaterialTextbox1.HintText = "";
             this.bunifuMaterialTextbox1.isPassword = false;
@@ -270,6 +271,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(303, 39);
             this.comboBox3.TabIndex = 23;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -308,6 +310,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.bunifuMaterialTextbox7);
             this.groupBox3.Controls.Add(this.bunifuMaterialTextbox6);
             this.groupBox3.Controls.Add(this.bunifuMaterialTextbox5);
             this.groupBox3.Controls.Add(this.checkBox2);
@@ -319,6 +322,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Diğer Bilgiler";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // bunifuMaterialTextbox7
+            // 
+            this.bunifuMaterialTextbox7.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bunifuMaterialTextbox7.ForeColor = System.Drawing.Color.Crimson;
+            this.bunifuMaterialTextbox7.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox7.HintText = "";
+            this.bunifuMaterialTextbox7.isPassword = false;
+            this.bunifuMaterialTextbox7.LineFocusedColor = System.Drawing.Color.BlueViolet;
+            this.bunifuMaterialTextbox7.LineIdleColor = System.Drawing.Color.DarkViolet;
+            this.bunifuMaterialTextbox7.LineMouseHoverColor = System.Drawing.Color.BlueViolet;
+            this.bunifuMaterialTextbox7.LineThickness = 4;
+            this.bunifuMaterialTextbox7.Location = new System.Drawing.Point(42, 77);
+            this.bunifuMaterialTextbox7.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMaterialTextbox7.Name = "bunifuMaterialTextbox7";
+            this.bunifuMaterialTextbox7.Size = new System.Drawing.Size(192, 39);
+            this.bunifuMaterialTextbox7.TabIndex = 25;
+            this.bunifuMaterialTextbox7.Text = "Emlak Başlığı";
+            this.bunifuMaterialTextbox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuMaterialTextbox6
             // 
@@ -354,7 +377,7 @@
             this.bunifuMaterialTextbox5.LineIdleColor = System.Drawing.Color.DarkViolet;
             this.bunifuMaterialTextbox5.LineMouseHoverColor = System.Drawing.Color.BlueViolet;
             this.bunifuMaterialTextbox5.LineThickness = 4;
-            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(42, 102);
+            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(42, 121);
             this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
             this.bunifuMaterialTextbox5.Size = new System.Drawing.Size(192, 39);
@@ -544,6 +567,7 @@
             this.Name = "kayitemlak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "kayitemlak";
+            this.Load += new System.EventHandler(this.kayitemlak_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -592,5 +616,6 @@
         private System.Windows.Forms.TextBox rsm1;
         private System.Windows.Forms.TextBox rsm2;
         private System.Windows.Forms.TextBox rsm3;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox7;
     }
 }

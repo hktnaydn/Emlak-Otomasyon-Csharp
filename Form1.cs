@@ -17,6 +17,7 @@ namespace emlakortomasyonu
     public partial class Form1 : Form
     {
         public static string musterino = null;
+       
         public Form1()
         {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace emlakortomasyonu
             if (isThere)
             {
                 musterino = textBox1.Text;
-                MessageBox.Show("Başarıyla giriş yaptınız", "Program");
+                MessageBox.Show("Başarıyla giriş yaptınız", "EMLAK OTOMASYON");
                 manageUsers panel = new manageUsers();
                 panel.Show();
                 this.Hide();
