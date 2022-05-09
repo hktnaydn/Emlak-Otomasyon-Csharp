@@ -29,7 +29,7 @@
 ![Emlak Sorgu](https://user-images.githubusercontent.com/57008579/167463646-fdecafbf-71ff-4364-9675-1b5027be98b2.jpg)
 
 
-# ***KARŞIYAKA İLÇESİNDEKİ EMLAK KAYITLARI VE SEÇİLEN BİR İLANIN DETAYLARINI***
+# ***KARŞIYAKA İLÇESİNDEKİ EMLAK KAYITLARI VE SEÇİLEN BİR İLANIN DETAYLARININ GÖRÜNTÜLENMESİ***
 
 ![detaylar](https://user-images.githubusercontent.com/57008579/167463734-872acf14-ab48-4612-ab95-fb309e0dbc30.jpg)
 
