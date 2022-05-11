@@ -28,6 +28,7 @@ namespace emlakortomasyonu
         public kayit()
         {
             InitializeComponent();
+       
         }
 
         private void kullanıcıidTextbox_OnValueChanged(object sender, EventArgs e)
@@ -57,14 +58,7 @@ namespace emlakortomasyonu
 
             adsoyad = adtextb.Text;
             adsoyad = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(adsoyad);
-            if (comboBox2.SelectedIndex == 0)
-                il = "34";
-            else if (comboBox2.SelectedIndex == 1)
-                il = "6";
-            else if (comboBox2.SelectedIndex == 2)
-                il = "35";
-            else
-            {il = "0";}
+            il = "6";
             cepno = textBox2.Text;
             password = passtextb.Text;
 
@@ -85,7 +79,7 @@ namespace emlakortomasyonu
             }
             else
             {
-                MessageBox.Show("Boş alan bırakmayınız");
+                MessageBox.Show("Alanları doğru şekilde doldurunuz");
             }
 
 
@@ -150,6 +144,34 @@ namespace emlakortomasyonu
             Form1 giris = new Form1();
             giris.Show();
             this.Close();
+        }
+
+        private void textBox2_OnValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void kayit_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox2_Enter_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Cep No")
+            {
+                textBox2.Text = "";
+                textBox2.ForeColor = Color.White;
+            }
+        }
+
+        private void textBox2_Leave_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "Cep No";
+                textBox2.ForeColor = Color.White;
+            }
         }
     }
     }

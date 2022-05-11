@@ -32,12 +32,13 @@
             this.adtextb = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.loginbutton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.showpasswordCheckbox = new System.Windows.Forms.CheckBox();
             this.passtextb = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // adtextb
@@ -77,9 +78,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.panel1.Controls.Add(this.separatorControl1);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.showpasswordCheckbox);
             this.panel1.Controls.Add(this.passtextb);
             this.panel1.Controls.Add(this.adtextb);
@@ -89,44 +90,6 @@
             this.panel1.Size = new System.Drawing.Size(663, 366);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.HintForeColor = System.Drawing.Color.Empty;
-            this.textBox2.HintText = "";
-            this.textBox2.isPassword = false;
-            this.textBox2.LineFocusedColor = System.Drawing.Color.BlueViolet;
-            this.textBox2.LineIdleColor = System.Drawing.Color.FloralWhite;
-            this.textBox2.LineMouseHoverColor = System.Drawing.Color.BlueViolet;
-            this.textBox2.LineThickness = 3;
-            this.textBox2.Location = new System.Drawing.Point(178, 187);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 44);
-            this.textBox2.TabIndex = 25;
-            this.textBox2.Text = "Cep No";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.Crimson;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "İstanbul",
-            "Ankara",
-            "İzmir"});
-            this.comboBox2.Location = new System.Drawing.Point(177, 250);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(303, 39);
-            this.comboBox2.TabIndex = 24;
-            this.comboBox2.Text = "İl";
             // 
             // showpasswordCheckbox
             // 
@@ -178,6 +141,33 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(178, 198);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.MaxLength = 11;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(302, 19);
+            this.textBox2.TabIndex = 27;
+            this.textBox2.Text = "Cep No";
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter_1);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave_1);
+            // 
+            // separatorControl1
+            // 
+            this.separatorControl1.LineColor = System.Drawing.Color.White;
+            this.separatorControl1.LineThickness = 3;
+            this.separatorControl1.Location = new System.Drawing.Point(167, 218);
+            this.separatorControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.separatorControl1.Name = "separatorControl1";
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.separatorControl1.Size = new System.Drawing.Size(323, 23);
+            this.separatorControl1.TabIndex = 28;
+            // 
             // kayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,8 +180,10 @@
             this.Name = "kayit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "kayit";
+            this.Load += new System.EventHandler(this.kayit_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,8 +194,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox showpasswordCheckbox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox passtextb;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private DevExpress.XtraEditors.SeparatorControl separatorControl1;
     }
 }

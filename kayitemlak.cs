@@ -324,5 +324,23 @@ namespace emlakortomasyonu
         {
 
         }
+
+        private void bunifuMaterialTextbox7_Enter(object sender, EventArgs e)
+        {
+            if (bunifuMaterialTextbox7.Text == "Emlak Başlığı")
+            {
+                bunifuMaterialTextbox7.Text = "";
+                bunifuMaterialTextbox7.ForeColor = Color.Red;
+            }
+        }
+
+        private void bunifuMaterialTextbox7_Leave(object sender, EventArgs e)
+        {
+            if (bunifuMaterialTextbox7.Text == "")
+            {
+                bunifuMaterialTextbox7.Text = "Emlak Başlığı";
+                bunifuMaterialTextbox7.ForeColor = Color.Red;
+            }
+        }
     }
 }

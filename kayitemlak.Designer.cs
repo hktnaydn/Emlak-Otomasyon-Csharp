@@ -342,6 +342,8 @@
             this.bunifuMaterialTextbox7.TabIndex = 25;
             this.bunifuMaterialTextbox7.Text = "Emlak Başlığı";
             this.bunifuMaterialTextbox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMaterialTextbox7.Enter += new System.EventHandler(this.bunifuMaterialTextbox7_Enter);
+            this.bunifuMaterialTextbox7.Leave += new System.EventHandler(this.bunifuMaterialTextbox7_Leave);
             // 
             // bunifuMaterialTextbox6
             // 

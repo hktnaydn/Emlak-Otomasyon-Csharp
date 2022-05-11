@@ -44,7 +44,7 @@ namespace emlakortomasyonu
         {
             registeredEstate estate = new registeredEstate();
             estate.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void manageUsers_Load(object sender, EventArgs e)
@@ -60,6 +60,13 @@ namespace emlakortomasyonu
                 uyeisim = reader["isim"].ToString();
             }
             connection.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            ilanlarim ilanlarim = new ilanlarim();
+            ilanlarim.Show();
+            this.Close();
         }
     }
 }
