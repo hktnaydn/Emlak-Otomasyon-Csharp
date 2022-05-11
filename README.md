@@ -33,5 +33,7 @@
 
 ![detaylar](https://user-images.githubusercontent.com/57008579/167463734-872acf14-ab48-4612-ab95-fb309e0dbc30.jpg)
 
+# ***Üyenin kendi ilanlarını görüntülemesi, Satıldı butonu ile ilan kaldırma yetkisi***
 
+![ilanlarım](https://user-images.githubusercontent.com/57008579/167928352-a0573ac0-9970-4541-8963-3b6312e90c14.jpg)
 
